@@ -1,0 +1,52 @@
+import Foundation
+print("a= ")
+let soa = readLine()
+if let sa = soa{
+  let foa = Float(sa)
+  if let fa = foa{
+      print("b= ")
+      let sob = readLine()
+      if let sb = sob{
+        let fob = Float(sb)
+        if let fb = fob{
+            print("c= ")
+            let soc = readLine()
+            if let sc = soc{
+              let foc = Float(sc)
+              if let fc = foc{
+                print("a =\(fa) b = \(fb) c= \(fc)")
+                let delat = fb * fb - 4 * fa * fc
+                let x1re , x2re , x1im , x2im : Float
+                if delat >= 0 {
+                  x1re = ( -fb - sqrt(delat)) / ( 2 * fa)
+                  x2re = ( -fb + sqrt(delat)) / ( 2 * fa)
+                  x1im = 0
+                  x2im = 0
+                }else{
+                  x1re = -fb / (2 * fa)
+                  x2re = -fb / (2 * fa)
+                  x1im = -sqrt( -delat) / (2 * fa)
+                  x2im =  sqrt( -delat) / (2 * fa)
+                }
+                print("x1 = \(x1re) + \(x1im)")
+                print ("x2 = \(x2re) + \(x2im)")
+              }else{
+                print("Conversie esuata")
+              }
+            }else{
+              print("nu am citit in a")
+            }
+
+        }else{
+          print("Conversie esuata")
+        }
+      }else{
+        print("nu am citit in a")
+      }
+
+  }else{
+    print("Conversie esuata")
+  }
+}else{
+  print("nu am citit in a")
+}
